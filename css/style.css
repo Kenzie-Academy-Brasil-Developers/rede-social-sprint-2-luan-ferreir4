@@ -26,7 +26,7 @@ figure, img, p, h1, h2{
 body{
 	font-family: Arial, Helvetica, sans-serif;
 	color: var(--font-color);
-
+	width: 92vw;
 	max-width: 935px;
 	margin: 0 auto;
 }
@@ -59,7 +59,7 @@ footer{
 
 /*PÁGINA INICIAL*/
 main{
-	width: 90vw;
+	width: 100%;
 	margin: 0 auto;
 }
 	main .profile-content{
@@ -67,6 +67,7 @@ main{
 		flex-direction: column;
 	}
 	.profile-content .colLeft{
+		width: 100%;
 		display: flex;
 		align-items: center;
 	}
@@ -79,9 +80,6 @@ main{
 			width: 100px;
 			margin-right: 20px;
 		} 
-		.profile-photo figure{
-			text-align: center;
-		}
 		.profile-photo img{
 			box-sizing: border-box;
 			width: 90px;
@@ -90,6 +88,7 @@ main{
 			padding: 2px;	
 		}
 		.profile-data{
+			width: 200px;
 			display: flex;
 			text-align: center;
 		}
@@ -97,16 +96,22 @@ main{
 			font-weight: bold;
 		}
 		.profile-data p{
-			font-size: 1rem;
-			margin-right: 30px;
+			font-size: 0.8rem;
+		} 
+		.headerDstp{
+			display: none;
 		}
-			
+		.dataDstp{
+			display: none;
+		}
 	.profile-content .colRigth{
 		margin: 10px 0;
 	}	
+		.profile-info h1, h2{
+			font-weight: 300;
+		}
 		.profile-info h2{
 			font-size: 1rem;
-			font-weight: bold;
 		}
 		.profile-info ul{
 			margin: 5px 0;
@@ -202,36 +207,64 @@ main{
 	.profile-posts img{
 		width: 160px;
 		height: 160px;
-		margin: 10px;
 	}
 }	
 @media (min-width: 800px){
 	main{
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		/* align-items: center; */
 	}
+		.headerMbl{
+			display: none;
+		}
+		.headerDstp{
+			display: block;
+		}
+		.dataMbl{
+			display: none;
+		}
+		.dataDstp{
+			display: flex;
+		}
+
 	main .profile-content{
-		width: 95vw;
-		display: flex;
+		flex-direction: row;
 		justify-content: center;
+		align-items: center;
 	}
+	.profile-content .colLeft{
+		width: 20%;
+	}
+		.profile-photo img{
+			box-sizing: border-box;
+			width: 140px;
+			border: 1.5px solid #a7a7a7;
+			border-radius: 100px;
+			padding: 2px;	
+		}
 	.profile-content .colRigth{
 		display: flex;
 		flex-direction: column;
-		width: 60vw;
+		width: 580px;
 	}
-	.profile-content .colLeft{
-		width: 30vw;
-	
-	}
+		.profile-info p{
+			margin-right: 15px;
+		}
+
+		.profile-data p{
+			display: flex;
+		} 
+		.profile-data span{
+			margin-right: 5px;
+		}
 
 	.profile-posts nav{
 		text-align: center;
 		border-top: 1px solid #a8a8a8;
 		padding: 15px 0;
 	}
+	
+
 	.profile-posts nav a{
 		margin: 10px 0;
 		padding: 15px 35px;
